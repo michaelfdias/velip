@@ -1,0 +1,33 @@
+{
+  "name": "velip",
+  "version": "1.0.0",
+  "description": "Velip Voice API Integration",
+  "main": "dist/index.js",
+  "dependencies": {
+    "moment": "^2.18.1",
+    "request": "^2.81.0",
+    "xml2json": "^0.11.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "scripts": {
+    "dist": "babel lib -d dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelfdias/velip.git"
+  },
+  "keywords": [
+    "velip",
+    "voice",
+    "call"
+  ],
+  "author": "Michael Felix Dias <michaelfdias@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelfdias/velip/issues"
+  },
+  "homepage": "https://github.com/michaelfdias/velip#readme"
+}
