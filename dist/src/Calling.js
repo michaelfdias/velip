@@ -147,10 +147,25 @@ var Calling = function () {
   }, {
     key: 'call',
     value: function call(audio) {
-      this.audio(audio);
+      var _this = this;
 
       var request = new _CallingRequest2.default(this);
-      return request.send();
+
+      if (typeof audio !== 'undefined' || this.audio().constructor.name == 'String') {
+        this.audio(audio);
+        return request.send();
+      }
+
+      if (this.audio().__proto__.__proto__.constructor.name == 'Audio') {
+        return this.audio().save().then(function (audioResponse) {
+          _this.audio(audioResponse);
+          return request.send();
+        });
+      }
+
+      return new Promise(function (resolve, reject) {
+        reject(new Error('Audio is invalid'));
+      });
     }
   }]);
 
