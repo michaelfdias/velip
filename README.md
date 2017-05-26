@@ -6,6 +6,10 @@ Módulo de integração com a API de Voz da [Velip](http://www.velip.com.br).
 npm i velip
 ```
 
+## Pré requisito
+Cadastrar no [painel da plataforma](https://vox04.velip.com.br/pop/vox/vox_login_cli.php) 
+o IP da máquina que irá realizar as operações, pois essa é a forma da Velip identificar cada cliente.
+
 ## Como usar
 
 ### Para criar um torpedo de voz baseado em texto (TTS) na plataforma da Velip:
