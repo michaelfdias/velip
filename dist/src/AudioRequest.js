@@ -25,7 +25,7 @@ var AudioRequest = function () {
     this._audio = audio;
 
     this._method = 'POST';
-    this._baseUrl = 'http://200.201.194.130';
+    this._baseUrl = 'http://200.201.216.94';
     this._paths = ['vox', 'GetAudioFile.php'];
   }
 
@@ -41,7 +41,8 @@ var AudioRequest = function () {
       return {
         method: this._method,
         formData: this._audio._body(),
-        url: this._url()
+        url: this._url(),
+        timeout: 8000
       };
     }
   }, {
@@ -51,7 +52,11 @@ var AudioRequest = function () {
 
       return new Promise(function (resolve, reject) {
         (0, _request2.default)(_this._req(), function (err, header, body) {
-          if (err) reject(err);
+          if (err) {
+            reject(err);
+            return;
+          }
+
           resolve(new _AudioResponse2.default(header.headers, body));
         });
       });

@@ -41,7 +41,8 @@ var CallingRequest = function () {
       return {
         method: this._method,
         formData: this._calling._body(),
-        url: this._url()
+        url: this._url(),
+        timeout: 8000
       };
     }
   }, {
@@ -51,7 +52,11 @@ var CallingRequest = function () {
 
       return new Promise(function (resolve, reject) {
         (0, _request2.default)(_this._req(), function (err, header, body) {
-          if (err) reject(err);
+          if (err) {
+            reject(err);
+            return;
+          }
+
           resolve(new _CallingResponse2.default(header.headers, body));
         });
       });
