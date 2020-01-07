@@ -25,7 +25,7 @@ var CallingRequest = function () {
     this._calling = calling;
 
     this._method = 'POST';
-    this._baseUrl = 'http://200.201.194.133';
+    this._baseUrl = 'https://vox.velip.com.br';
     this._paths = ['pop', 'torpedo', 'MakeTTSCall.php'];
   }
 

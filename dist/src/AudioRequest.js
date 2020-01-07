@@ -25,8 +25,8 @@ var AudioRequest = function () {
     this._audio = audio;
 
     this._method = 'POST';
-    this._baseUrl = 'http://200.201.216.94';
-    this._paths = ['vox', 'GetAudioFile.php'];
+    this._baseUrl = 'https://vox.velip.com.br';
+    this._paths = ['pop', 'torpedo', 'GetAudioFile.php'];
   }
 
   _createClass(AudioRequest, [{

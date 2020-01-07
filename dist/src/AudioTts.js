@@ -27,10 +27,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var AudioTts = function (_AbstractAudio) {
   _inherits(AudioTts, _AbstractAudio);
 
-  function AudioTts() {
+  function AudioTts(credentials) {
     _classCallCheck(this, AudioTts);
 
     var _this = _possibleConstructorReturn(this, (AudioTts.__proto__ || Object.getPrototypeOf(AudioTts)).call(this));
+
+    _this._credentials = credentials;
 
     _this._text = null;
     _this._charset = null;
@@ -93,6 +95,9 @@ var AudioTts = function (_AbstractAudio) {
     key: '_body',
     value: function _body() {
       var body = _get(AudioTts.prototype.__proto__ || Object.getPrototypeOf(AudioTts.prototype), '_body', this).call(this);
+
+      body.user = this._credentials.user || '';
+      body.password = this._credentials.password || '';
 
       if (this.text() !== null) body.text = this.text();
 

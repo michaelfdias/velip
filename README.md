@@ -16,7 +16,9 @@ o IP da máquina que irá realizar as operações, pois essa é a forma da Velip
 ``` js
 const Velip = require('velip');
 
-const audio = new Velip.Audio();
+const credentials = { user: 'nomedeusuario', password: 'senha' };
+
+const audio = new Velip.Audio(credentials);
 
 const tts = audio.tts();
 tts
@@ -34,7 +36,9 @@ tts
 ``` js
 const Velip = require('velip');
 
-const audio = new Velip.Audio();
+const credentials = { user: 'nomedeusuario', password: 'senha' };
+
+const audio = new Velip.Audio(credentials);
 const calling = new Velip.Calling();
 calling.to(11966669999);
 
@@ -54,7 +58,9 @@ tts
 ``` js
 const Velip = require('velip');
 
-const audio = new Velip.Audio();
+const credentials = { user: 'climatempoconsultoria', password: 'climatempo' };
+
+const audio = new Velip.Audio(credentials);
 const tts = audio.tts();
 tts.text('Olá Mundo!');
 
